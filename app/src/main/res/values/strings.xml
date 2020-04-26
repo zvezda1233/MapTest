@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MapTest</string>
+    <string name="google_maps_API_key">AIzaSyAJavP8iXuJSXxGUs6U7V5cxUZs0sBwwac</string>
+</resources>
