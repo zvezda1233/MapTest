@@ -1,80 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <EditText
-        android:id="@+id/comment_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:ems="10"
-        android:hint="Comment"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.535"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox2" />
+    android:layout_height="match_parent"
+    android:background="#666E9E"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context="com.example.maptest.UserComment">
 
     <EditText
         android:id="@+id/address_id"
-        android:layout_width="wrap_content"
+        android:layout_width="241dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="152dp"
+        android:layout_marginBottom="28dp"
+        android:background="#FFFFFF"
         android:ems="10"
         android:hint="Address"
-        android:inputType="textPersonName"
+        android:inputType="textMultiLine"
+        android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/date_id"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.535"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <CheckBox
-        android:id="@+id/checkBox2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="I was not there"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.371"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox1" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/date_id"
-        android:layout_width="wrap_content"
+        android:layout_width="241dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:ems="10"
+        android:layout_marginBottom="68dp"
+        android:background="#FFFFFF"
+        android:ems="20"
         android:hint="Date"
         android:inputType="date"
+        android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/radioButtonYES"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.535"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/address_id" />
+        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <CheckBox
-        android:id="@+id/checkBox1"
+    <RadioButton
+        android:id="@+id/radioButtonYES"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:background="#FFFFFF"
+        android:checked="false"
+        android:clickable="false"
+        android:contextClickable="true"
+        android:padding="10dp"
+        android:text="i was there"
+        app:layout_constraintBottom_toTopOf="@+id/radioButtonNO"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <RadioButton
+        android:id="@+id/radioButtonNO"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="i was there"
+        android:layout_marginBottom="40dp"
+        android:background="#FFFFFF"
+        android:checked="false"
+        android:clickable="false"
+        android:contextClickable="true"
+        android:padding="10dp"
+        android:text="I was not there"
+        app:layout_constraintBottom_toTopOf="@+id/comment_id"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.341"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/date_id" />
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/comment_id"
+        android:layout_width="241dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp"
+        android:background="#FFFFFF"
+        android:ems="10"
+        android:hint="Comment"
+        android:inputType="textMultiLine"
+        android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/rating_rating_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.518"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <RatingBar
+        android:id="@+id/rating_rating_bar"
+        android:layout_width="241dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="37dp"
+        android:background="#FFFFFF"
+        android:numStars="5"
+        android:paddingTop="10dp"
+        android:stepSize=".5"
+        app:layout_constraintBottom_toTopOf="@+id/save_button_id"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/save_button_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginBottom="36dp"
         android:text="Save information"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.417"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/comment_id" />
+        app:layout_constraintStart_toStartOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

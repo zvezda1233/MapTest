@@ -27,20 +27,20 @@
             android:layout_height="15dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
-            android:src="@drawable/ic_magnify"/>
+            android:src="@drawable/ic_magnify" />
 
         <AutoCompleteTextView
+            android:id="@+id/input_search"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_toRightOf="@id/ic_magnify"
             android:layout_centerVertical="true"
-            android:textSize="15sp"
-            android:textColor="#000"
-            android:id="@+id/input_search"
+            android:layout_toRightOf="@id/ic_magnify"
             android:background="@null"
-            android:hint=" Enter Address or Zip code"
+            android:hint=" Enter Address"
             android:imeOptions="actionSearch"
-            />
+            android:inputType="textCapSentences|textAutoCorrect"
+            android:textColor="#000"
+            android:textSize="15sp" />
 
     </RelativeLayout>
 

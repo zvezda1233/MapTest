@@ -97,10 +97,9 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         autoCompleteTextView.setAdapter(new PlaceAutoSuggestAdapter(MapActivity.this, android.R.layout.simple_list_item_1));
 
         mGPS = (ImageView) findViewById(R.id.ic_gps);
-
-
         getLocationPermission();
         init();
+        hideSoftKeyboard();
     }
 
     private void init() {
@@ -146,8 +145,8 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
             moveCamera(new LatLng(address.getLatitude(), address.getLongitude()), DEFAULT_ZOOM, address.getAddressLine(0));
         }
+        hideSoftKeyboard();
     }
-
 
 
     private void moveCamera(LatLng latLng, float zoom, String title) {
@@ -161,12 +160,11 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
-                Intent mark = new Intent(MapActivity.this,UserComment.class);
-//                mark.putExtra("latitude",address.getLatitude());
-//                mark.putExtra("longitude",address.getLatitude());
-                mark.putExtra("address",address.getAddressLine(0));
+                Intent mark = new Intent(MapActivity.this, UserComment.class);
+//
+                mark.putExtra("address", address.getAddressLine(0));
                 startActivity(mark);
-                return  true;
+                return true;
             }
         });
         hideSoftKeyboard();
@@ -212,6 +210,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         if (mapFragment != null) {
             mapFragment.getMapAsync(MapActivity.this);
         }
+        hideSoftKeyboard();
     }
 
     private void getLocationPermission() {
@@ -259,6 +258,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                 }
             }
         }
+        hideSoftKeyboard();
     }
 
     private void hideSoftKeyboard() {
