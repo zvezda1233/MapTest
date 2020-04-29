@@ -14,9 +14,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.maptest.UserComment"
-            android:theme="@style/AppTheme.SliderActivityTheme"
-            ></activity>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -25,7 +22,15 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <activity android:name="com.example.maptest.MainActivity">
+        <activity
+            android:name="com.example.maptest.UserComment"
+            android:theme="@style/AppTheme.SliderActivityTheme" />
+
+        <activity android:name="com.example.maptest.RegistrationActivity" />
+        <activity android:name="com.example.maptest.MainActivity"/>
+        <activity android:name="com.example.maptest.SignInActivity" >
+
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

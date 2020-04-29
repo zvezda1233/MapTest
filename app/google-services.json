@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "342976587372",
+    "firebase_url": "https://loginandpassword-9d478.firebaseio.com",
+    "project_id": "loginandpassword-9d478",
+    "storage_bucket": "loginandpassword-9d478.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:342976587372:android:30f88d24c01abc82b39a49",
+        "android_client_info": {
+          "package_name": "com.example.maptest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "342976587372-3dr0pj27vseths96v00rnoa449du71k5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOvH3RVQOLIOhYkK75gWsGLho7vnt-OR0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "342976587372-3dr0pj27vseths96v00rnoa449du71k5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
