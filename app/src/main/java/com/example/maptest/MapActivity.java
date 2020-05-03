@@ -11,6 +11,8 @@ import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
@@ -50,6 +52,9 @@ import codingwithmitch.com.googlemapsgoogleplaces.R;
 
 
 public class MapActivity extends AppCompatActivity implements OnMapReadyCallback {
+
+    private Context RatingActivity;
+    private Context ProfileActivity;
 
     @Override
     public void onMapReady(GoogleMap googleMap) { //WHEN PROGRAM START WORKING
@@ -101,7 +106,31 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         init();
         hideSoftKeyboard();
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
 
+    public boolean onOptionsItemSelected(MenuItem item){
+        int id=item.getItemId();
+
+        switch (id){
+            case R.id.action_rating:
+                Intent rating = new Intent(MapActivity.this, RatingActivity.class);
+                startActivity(rating);
+                break;
+            case R.id.action_profile:
+                Intent profile = new Intent(MapActivity.this, ProfileActiivity.class);
+                startActivity(profile);
+                break;
+            case R.id.action_map:
+                Toast.makeText(MapActivity.this,getString(R.string.action_map),Toast.LENGTH_LONG).show();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
     private void init() {
         Log.d(TAG, "init:initializing");
         mSearchText.setOnEditorActionListener(new TextView.OnEditorActionListener() {

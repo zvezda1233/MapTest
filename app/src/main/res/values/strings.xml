@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">MapTest</string>
     <string name="google_maps_API_key">AIzaSyAJavP8iXuJSXxGUs6U7V5cxUZs0sBwwac</string>
+
+    <string name="action_map">Map</string>
+    <string name="action_rating">Rating</string>
+    <string name="action_profile">Profile</string>
+
 </resources>
