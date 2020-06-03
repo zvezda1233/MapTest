@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        >
+
+        <TextView
+            android:id="@+id/textViewplace"
+            android:layout_width="229dp"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:padding="20dp"
+            android:text="Place" />
+
+        <TextView
+            android:id="@+id/textViewspinner"
+            android:layout_width="248dp"
+            android:layout_height="wrap_content"
+            android:layout_row="2"
+            android:layout_column="0"
+            android:padding="20dp"
+            android:text="Spinner" />
+
+        <TextView
+            android:id="@+id/textViewdate"
+            android:layout_width="137dp"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:padding="20dp"
+            android:text="Date" />
+
+        <TextView
+            android:id="@+id/textViewcomment"
+            android:layout_width="248dp"
+            android:layout_height="wrap_content"
+            android:layout_row="3"
+            android:layout_column="0"
+
+            android:padding="20dp"
+            android:text="comment" />
+
+        <TextView
+            android:id="@+id/textViewstars"
+            android:layout_width="137dp"
+            android:layout_height="wrap_content"
+            android:layout_row="3"
+            android:layout_column="1"
+            android:padding="20dp"
+            android:text="stars" />
+
+        <ImageView
+            android:id="@+id/ic_gps"
+            android:layout_width="111dp"
+            android:layout_height="57dp"
+            android:layout_row="3"
+            android:layout_column="1"
+
+            android:scaleType="center"
+            android:src="@drawable/ic_stars" />
+
+    </GridLayout>
+
+
+</LinearLayout>

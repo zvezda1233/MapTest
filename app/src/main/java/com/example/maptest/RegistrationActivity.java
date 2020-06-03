@@ -2,6 +2,7 @@ package com.example.maptest;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,6 +20,10 @@ import com.google.firebase.auth.FirebaseAuth;
 import codingwithmitch.com.googlemapsgoogleplaces.R;
 
 public class RegistrationActivity extends AppCompatActivity {
+
+
+    private static final String TAG = "Registration";
+
 
     EditText userLogin, emailID, password;
     Button btnSignUP;
@@ -49,6 +54,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 if (userLog.isEmpty()) {
                     userLogin.setError("Please enter the username!");
                     userLogin.requestFocus();
+                    Log.d(TAG, "login 1 " + userLogin.getText().toString());
                 }
                 if (email.isEmpty()) {
                     emailID.setError("Please enter the E-mail!");
@@ -60,12 +66,17 @@ public class RegistrationActivity extends AppCompatActivity {
                     Toast.makeText(RegistrationActivity.this, "Fields are empty", Toast.LENGTH_SHORT).show(); //всплывающее окно
                 } else if (!(email.isEmpty() && pwd.isEmpty() && userLog.isEmpty())) {
                     mFirebaseAuth.createUserWithEmailAndPassword(email, pwd).addOnCompleteListener(RegistrationActivity.this, new OnCompleteListener<AuthResult>() {
+
+
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (!task.isSuccessful()) {
 
                                 Toast.makeText(RegistrationActivity.this, "Incorrect e-mail or password", Toast.LENGTH_SHORT).show();
+
                             } else {
+                                Log.d(TAG, "login 2" + userLogin.getText().toString());
+                                //  mFirebaseAuth.addAuthStateListener((FirebaseAuth.AuthStateListener) userLogin);
                                 startActivity(new Intent(RegistrationActivity.this, MapActivity.class));
                             }
                         }
@@ -73,6 +84,16 @@ public class RegistrationActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(RegistrationActivity.this, "Error Occurred", Toast.LENGTH_SHORT).show();
                 }
+
+                Log.d(TAG, "login " + userLogin.getText().toString());
+                Intent intent = new Intent(RegistrationActivity.this, ProfileActiivity.class);
+                intent.putExtra("email_for_profile", emailID.getText().toString());
+                intent.putExtra("username", userLogin.getText().toString());
+                // startActivity(intent);
+
+
+                Log.d(TAG, "login " + userLogin.getText().toString());
+                Log.d(TAG, "login " + emailID.getText().toString());
             }
         });
         tvgoto_SignIN.setOnClickListener(new View.OnClickListener() {
@@ -81,7 +102,12 @@ public class RegistrationActivity extends AppCompatActivity {
                 Intent i = new Intent(RegistrationActivity.this, SignInActivity.class);
                 startActivity(i);
 
+
             }
         });
+
+
     }
+
+
 }

@@ -7,25 +7,25 @@
     tools:context="com.example.maptest.SignInActivity"
     android:background="#DAB8AE">
 
+
     <TextView
 
         android:id="@+id/sign_in_activity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="164dp"
-        android:text="Sign In Activity"
+        android:layout_marginTop="160dp"
+        android:text="Sign In "
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.271"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints"
-        />
-
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/SignIN_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="39dp"
+        android:layout_marginTop="38dp"
         android:background="#ECECEC"
         android:ems="10"
         android:hint="Email"
@@ -33,7 +33,7 @@
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sign_in_activity"
+        app:layout_constraintTop_toBottomOf="@+id/HI_text"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -74,6 +74,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_signIN" />
+
+    <TextView
+        android:id="@+id/HI_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:text="Hi there! Nice to meet you again!"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sign_in_activity" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

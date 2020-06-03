@@ -43,6 +43,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -97,6 +98,8 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     protected void onCreate(@Nullable Bundle savedInstanceState) { //WHEN USER START WRITE
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
+
+
         mSearchText = (AutoCompleteTextView) findViewById(R.id.input_search);
         AutoCompleteTextView autoCompleteTextView = findViewById(R.id.input_search);
         autoCompleteTextView.setAdapter(new PlaceAutoSuggestAdapter(MapActivity.this, android.R.layout.simple_list_item_1));
@@ -106,6 +109,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         init();
         hideSoftKeyboard();
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -113,10 +117,10 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         return true;
     }
 
-    public boolean onOptionsItemSelected(MenuItem item){
-        int id=item.getItemId();
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
 
-        switch (id){
+        switch (id) {
             case R.id.action_rating:
                 Intent rating = new Intent(MapActivity.this, RatingActivity.class);
                 startActivity(rating);
@@ -126,11 +130,17 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                 startActivity(profile);
                 break;
             case R.id.action_map:
-                Toast.makeText(MapActivity.this,getString(R.string.action_map),Toast.LENGTH_LONG).show();
+                Toast.makeText(MapActivity.this, getString(R.string.action_map), Toast.LENGTH_LONG).show();
+                break;
+            case R.id.action_LOGOUT:
+                FirebaseAuth.getInstance().signOut();
+                Intent IntToSignUp = new Intent(MapActivity.this, SignInActivity.class);
+                Toast.makeText(this, "Return Application", Toast.LENGTH_SHORT).show();
                 break;
         }
         return super.onOptionsItemSelected(item);
     }
+
     private void init() {
         Log.d(TAG, "init:initializing");
         mSearchText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -190,9 +200,10 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
             @Override
             public boolean onMarkerClick(Marker marker) {
                 Intent mark = new Intent(MapActivity.this, UserComment.class);
-//
+                Log.d(TAG, "address1 MapActivity" + address);
                 mark.putExtra("address", address.getAddressLine(0));
                 startActivity(mark);
+                Log.d(TAG, "address2 MapActivity" + address);
                 return true;
             }
         });

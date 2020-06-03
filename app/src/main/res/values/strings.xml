@@ -6,4 +6,11 @@
     <string name="action_rating">Rating</string>
     <string name="action_profile">Profile</string>
 
+    <string name="action_LOGOUT">LOGOUT</string>
+
+    <array name="spinnerYES_NO">
+        <item> I WAS IN THIS COUNTRY</item>
+        <item>I WAS NOT IN THIS COUNTRY</item>
+    </array>
 </resources>
+     
